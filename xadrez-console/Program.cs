@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using tabuleiro;
 using System.Threading.Tasks;
+using Xadrez;
 
 namespace xadrez_console
 {
@@ -13,10 +14,12 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            Tabuleiro tab = new Tabuleiro(8, 8);
-            tab.InsertPeca(new Torre(tab, Cor.Branca), new Posicao(0, 0));
-            tab.InsertPeca(new Rei(tab, Cor.Branca), new Posicao(0,0));
-            Tela.PrintTabuleiro(tab);
+
+            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
+            Console.WriteLine(pos);
+            Console.WriteLine();
+            Console.WriteLine(pos.ToPosition());
+
             Console.ReadKey();
         }
     }
