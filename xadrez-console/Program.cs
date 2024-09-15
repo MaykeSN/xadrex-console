@@ -14,11 +14,13 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-
-            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-            Console.WriteLine(pos);
-            Console.WriteLine();
-            Console.WriteLine(pos.ToPosition());
+            Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+            Torre torre = new Torre(tabuleiro, Cor.Preta);
+            Torre torreBranca = new Torre(tabuleiro, Cor.Branca);
+            tabuleiro.InsertPeca(torre, new Posicao(0,0));
+            tabuleiro.InsertPeca(torreBranca, new Posicao(0,1));
+            
+            Tela.PrintTabuleiro(tabuleiro);
 
             Console.ReadKey();
         }
